@@ -13,3 +13,10 @@ total_folders () {
 
 echo `total_files $input`
 echo `total_folders $input`
+echo $0
+echo $#
+echo $@
+echo $$
+
+val=`expr 2 + 35 - 3 \* 3`
+echo $val
