@@ -22,6 +22,37 @@ while [ $counter -lt 3 ]; do
     echo $counter
     if [ $counter -eq 2 ]; then
         echo "Exit!"
-        exit 1
+        # exit 1
     fi
 done
+
+# function statement
+function a_function {
+    echo $1
+}
+
+a_function "132,000"
+
+# local variable
+value=1234
+function my_func() {
+    local value=5678
+    echo "function: value=${value}"
+}
+echo "before : value=${value}"
+my_func
+echo "after : value=${value}"
+
+# array
+array_name=("value 1" "value 2" "value 3")
+echo "array = ${array_name[@]}"
+
+for ((i=0; i<3; i++)); do
+    echo "$i"
+done
+
+printf "ddd\n"
+
+if [ -d "$DIRECTORY" ]; then
+    echo "$DIRECTORY exists."
+fi
